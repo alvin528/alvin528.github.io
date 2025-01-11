@@ -164,19 +164,6 @@
                 </div>
         </div>
 
-
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="video-compare-container" id="materialsDiv">
-                    <video class="video" id="materials" loop playsinline autoPlay muted src="video/materials_circle_mipnerf_ours.mp4" onplay="resizeAndPlay(this)"></video>
-
-                    <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
-                </div>
-			</div>
-        </div> -->
-
-
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -205,133 +192,34 @@
                 <h3>
                     Comparison Results
                 </h3>
-                <image src="img/dtu.png" class="img-responsive" alt="overview" width="100%" style="max-height: 750px;margin:auto;"></image>
+                <h4>
+                    Comparison on DTU Dataset
+                </h4>
                 <p class="text-justify">
-                    Qualitative comparison of reconstruction results on the DTU dataset with different sparse settings.
+                    Qualitative comparison of reconstruction results on DTU dataset with different sparse settings.
+                </p>
+                <image src="img/dtu.png" class="img-responsive" alt="overview" width="100%" style="max-height: 750px;margin:auto;"></image>
+                <h4>
+                    Comparison on BlendedMVS Dataset
+                </h4>
+                <p class="text-justify">
+                    Qualitative comparison of reconstruction results on BlendedMVS dataset with three input views.
+                </p>
+                <image src="img/bmvs.png" class="img-responsive" alt="overview" width="80%" style="max-height: 750px;margin:auto;"></image>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Ablation Study
+                </h3>
+                <image src="img/ablation.png" class="img-responsive" alt="overview" width="80%" style="max-height: 750px;margin:auto;"></image>
+                <p class="text-justify">
+                    Visual comparison of ablation study on DTU Scan 83. The transition of the error maps from <a style="color:blue">blue</a> to <a style="color:gold">yellow</a> indicates larger reconstruction errors.
                 </p>
             </div>
         </div>
-
-        <!-- <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Video
-                </h3>
-                <div class="text-center">
-                    <div style="position:relative;padding-top:56.25%;">
-                        <iframe src="https://youtube.com/embed/qrdRH9irAlk" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Reflection Direction Parameterization
-                </h3>
-                <div class="text-justify">
-                    Previous approaches directly input the camera's view direction into the MLP to predict outgoing radiance. We show that instead using the reflection of the view direction about the normal makes the emittance function significantly easier to learn and interpolate, greatly improving our results.
-
-                    <br><br>
-
-                </div>
-                <div class="text-center">
-                    <video id="refdir" width="40%" playsinline autoplay loop muted>
-                        <source src="video/reflection_animation.mp4" type="video/mp4" />
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Integrated Directional Encoding
-                </h3>
-                <div class="text-justify">
-                    We explicitly model object roughness using the expected values of a set of spherical harmonics under a von Mises-Fisher distribution whose concentration parameter varies spatially:
-                </div>
-                <br>
-                <div class="text-center">
-                    <img src="./img/ide.png" width="50%">
-                </div>
-                <br>
-                <div class="text-justify">
-                    We call this <i>Integrated Directional Encoding</i>, and we show experimentally that it allows sharing the emittance functions between points with different roughnesses. It also enables scene editing after training. Theoretically, our encoding is stationary on the sphere, similar to the Euclidean stationarity of NeRF's positional encoding. <br><br>
-                </div>
-                <div class="text-center">
-                    <video id="ide" width="100%" playsinline autoplay controls loop muted>
-                        <source src="video/ide_animation.mp4" type="video/mp4" />
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Additional Synthetic Results
-                </h3>
-                <div class="video-compare-container">
-                    <video class="video" id="musclecar" loop playsinline autoPlay muted src="video/musclecar_mipnerf_ours.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="musclecarMerge"></canvas>
-                </div>
-			</div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Results on Captured Scenes
-                </h3>
-                Our method also produces accurate renderings and surface normals from captured photographs:
-                <div class="video-compare-container" style="width: 100%">
-                    <video class="video" id="toycar" loop playsinline autoPlay muted src="video/toycar.mp4" onplay="resizeAndPlay(this)"></video>
-                    <canvas height=0 class="videoMerge" id="toycarMerge"></canvas>
-                </div>
-			</div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Scene Editing
-                </h3>
-                <div class="text-justify">
-                    We show that our structured representation of the directional MLP allows for scene editing after training. Here we show that we can convincingly change material properties.
-                    <br>
-                    We can increase and decrease material roughness:
-                </div>
-
-                <div style="overflow: hidden;">
-                    <video id="editing-materials" width="100%" playsinline autoplay loop muted style="margin-top: -5%;">
-                        <source src="video/materials_rougher_smoother.mp4" type="video/mp4" />
-                    </video>
-                </div>
-
-                <div class="text-justify">
-                    We can also control the amounts of specular and diffuse colors, or change the diffuse color without affecting the specular reflections:
-                </div>
-
-                <table width="100%">
-                    <tr>
-                        <td align="left" valign="top" width="50%">
-                            <video id="v2" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color2.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                        <td align="left" valign="top" width="50%">
-                            <video id="v3" width="100%" playsinline autoplay loop muted>
-                                <source src="video/car_color3.mp4" type="video/mp4" />
-                            </video>
-                        </td>
-                    </tr>
-                </table>
-
-            </div>
-        </div> -->
-
 
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -354,9 +242,7 @@
                     Acknowledgements
                 </h3>
                 <p class="text-justify">
-                    The framework is built upon <a href="https://surfsplatting.github.io/">2DGS</a> and <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3DGS</a>. Thanks to the authors for their great work.
-                </p>
-                <p class="text-justify">
+                    The framework is built upon <a href="https://surfsplatting.github.io/">2DGS</a> and <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3DGS</a>. Thanks to the authors for their great work.<br>
                     The website template was borrowed from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
                 </p>
             </div>

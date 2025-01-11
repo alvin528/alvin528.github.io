@@ -35,7 +35,7 @@
         </div>
         <div class="navbar-menu">
             <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-                <a class="navbar-item" href="https://github.com/alvin528">
+                <a class="navbar-item" href="https://yulunwu0108.github.io/">
                     <span class="icon">🏠</span>
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -45,6 +45,9 @@
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="https://alvin528.github.io/FatesGS/">
                             FatesGS
+                        </a>
+                        <a class="navbar-item" href="https://yulunwu0108.github.io/Sparis/">
+                            Sparis
                         </a>
                         <a class="navbar-item" href="https://alvin528.github.io/NeuSurf/">
                             NeuSurf
@@ -197,6 +200,18 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Comparison Results
+                </h3>
+                <image src="img/dtu.png" class="img-responsive" alt="overview" width="100%" style="max-height: 750px;margin:auto;"></image>
+                <p class="text-justify">
+                    Qualitative comparison of reconstruction results on the DTU dataset with different sparse settings.
+                </p>
+            </div>
+        </div>
+
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
@@ -323,15 +338,13 @@
                 <h3>
                     BibTeX
                 </h3>
-                <div class="form-group col-md-10 col-md-offset-1">
-                    <textarea id="bibtex" class="form-control" readonly>
+                <pre style="font-size: 12px;">
 @inproceedings{huang2025fatesgs,
     title={FatesGS: Fast and Accurate Sparse-View Surface Reconstruction using Gaussian Splatting with Depth-Feature Consistency},
     author={Han Huang and Yulun Wu and Chao Deng and Ge Gao and Ming Gu and Yu-Shen Liu},
     booktitle={AAAI},
     year={2025}
-}</textarea>
-                </div>
+}</pre>
             </div>
         </div>
 
@@ -340,6 +353,9 @@
                 <h3>
                     Acknowledgements
                 </h3>
+                <p class="text-justify">
+                    The framework is built upon <a href="https://surfsplatting.github.io/">2DGS</a> and <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3DGS</a>. Thanks to the authors for their great work.
+                </p>
                 <p class="text-justify">
                     The website template was borrowed from <a href="https://dorverbin.github.io/refnerf/">Ref-NeRF</a> and <a href="http://mgharbi.com/">Michaël Gharbi</a>.
                 </p>
